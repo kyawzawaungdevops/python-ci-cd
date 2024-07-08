@@ -8,10 +8,10 @@ on:
     branches:
       - main
 
-  
+jobs:
   Run-test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v4
