@@ -16,7 +16,12 @@ jobs:
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v4
-
+  
+  
+  Run-test:
+    runs-on: ubuntu-latest
+    needs: checkout
+    steps:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -27,15 +32,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest
-  
-  
-  Run-test:
-    runs-on: ubuntu-latest
-    needs: checkout
-    steps:
     - name: Run tests
       run: |
         pytest
+    
   
   Docker-login:
     runs-on: ubuntu-latest
