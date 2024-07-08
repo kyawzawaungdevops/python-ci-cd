@@ -9,6 +9,12 @@ on:
       - main
 
 jobs:
+  checkout:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v4
   
   Run-test:
     runs-on: ubuntu-latest
