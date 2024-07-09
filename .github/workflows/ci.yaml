@@ -38,6 +38,11 @@ jobs:
     steps:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.3.0
+      args: >
+          -Dsonar.projectKey=verdant-sphere_python-app
+          -Dsonar.organization=verdant-sphere
+          -Dsonar.sources=.
+          -Dsonar.host.url=https://sonarcloud.io
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
