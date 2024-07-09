@@ -38,7 +38,7 @@ jobs:
     steps:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.3.0
-      with:
+      env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   Build-and-push-Docker-image:
