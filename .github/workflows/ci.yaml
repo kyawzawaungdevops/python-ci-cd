@@ -142,5 +142,6 @@ jobs:
 
     - name: push
       run: |
+        docker load --input ./vuln-image.tar
         docker push testingkyaw/my-python-app:latest
  
