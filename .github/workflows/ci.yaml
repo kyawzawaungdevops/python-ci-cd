@@ -39,7 +39,7 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v4
 
-    - name: SonarCloud Scan
+    - name: SonarCloud Scanning
       uses: sonarsource/sonarcloud-github-action@v2.3.0
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
