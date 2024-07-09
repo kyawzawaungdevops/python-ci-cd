@@ -61,6 +61,9 @@ jobs:
         output: 'trivy-report.sarif'
         severity: 'HIGH,CRITICAL'
 
+    - name: Display Trivy report
+      run: cat trivy-report.sarif
+
     - name: Upload Trivy report to Security tab
       uses: github/codeql-action/upload-sarif@v2
       with:
