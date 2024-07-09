@@ -108,3 +108,5 @@ jobs:
       with:
         input: vuln-image.tar
         severity: 'CRITICAL,HIGH'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
