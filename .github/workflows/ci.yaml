@@ -83,7 +83,9 @@ jobs:
     - name: build docker image
       run: |
         docker build -t testingkyaw/my-python-app:latest .
-        docker save -o /github/workspace/vuln-image.tar testingkyaw/my-python-app:latest
+        docker save -o vuln-image.tar testingkyaw/my-python-app:latest
+        pwd
+        ls -lrta
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
