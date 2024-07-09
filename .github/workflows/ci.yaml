@@ -83,7 +83,7 @@ jobs:
     - name: build docker image
       run: |
         docker build -t testingkyaw/my-python-app:latest .
-        docker save -o /home/runner/work/python-ci-cd/python-ci-cd/vuln-image.tar testingkyaw/my-python-app:latest
+        docker save -o vuln-image.tar testingkyaw/my-python-app:latest
         pwd
         ls -lrta
 
@@ -91,7 +91,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
           name: vuln-image
-          path: /tmp/vuln-image.tar
+          path: vuln-image.tar
 
   Trivy-Container-image-scan:
     runs-on: ubuntu-latest
@@ -102,10 +102,10 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: vuln-image
-        path: /tmp
+        path: .
 
     - name: Run Trivy vulnerability scanner in tarball mode
       uses: aquasecurity/trivy-action@0.20.0
       with:
-        input: /tmp/vuln-image.tar
+        input: vuln-image.tar
         severity: 'CRITICAL,HIGH'
