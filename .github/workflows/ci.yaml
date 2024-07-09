@@ -102,7 +102,6 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: vuln-image
-        path: .
 
     - name: Run Trivy vulnerability scanner in tarball mode
       uses: aquasecurity/trivy-action@0.20.0
