@@ -57,7 +57,7 @@ jobs:
         with:
           scan-type: 'fs'
           ignore-unfixed: true
-          format: 'sarif'
+          format: 'json'
           output: 'trivy-report.json'
           severity: 'HIGH,CRITICAL'
 
