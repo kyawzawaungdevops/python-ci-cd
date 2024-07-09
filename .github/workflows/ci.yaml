@@ -142,6 +142,5 @@ jobs:
 
     - name: push
       run: |
-        docker tag testingkyaw/my-python-app:latest testingkyaw/my-python-app:${{ github.sha }}
         docker push testingkyaw/my-python-app:latest
-        docker push testingkyaw/my-python-app:${{ github.sha }}
+ 
