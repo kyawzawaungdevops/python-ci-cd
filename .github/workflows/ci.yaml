@@ -33,8 +33,11 @@ jobs:
 
   sonar-scan:
     runs-on: ubuntu-latest
+
+    steps:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.3.0
+      with:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   Build-and-push-Docker-image:
