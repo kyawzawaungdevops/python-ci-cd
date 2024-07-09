@@ -51,8 +51,8 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-        
-      - name: Run Trivy vulnerability scanner in repo mode
+
+      - name: Run Trivy vulnerability scanner 
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
