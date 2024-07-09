@@ -45,8 +45,8 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   Trivy-Fs-scan:
-      runs-on: ubuntu-latest
-      needs: sonar-scan
+    runs-on: ubuntu-latest
+    needs: sonar-scan
     
     steps:
       - name: Run Trivy vulnerability scanner in repo mode
