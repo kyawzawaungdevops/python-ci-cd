@@ -101,7 +101,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
-        name: vuln-image
+        name: vuln-image.tar
         path: /home/runner/work/python-ci-cd/python-ci-cd
 
     - name: Run Trivy vulnerability scanner in tarball mode
