@@ -91,7 +91,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
           name: vuln-image
-          path: /home/runner/work/python-ci-cd/python-ci-cd/vuln-image.tar
+          path: /tmp/vuln-image.tar
 
   Trivy-Container-image-scan:
     runs-on: ubuntu-latest
@@ -101,11 +101,11 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
-        name: vuln-image.tar
-        path: /home/runner/work/python-ci-cd/python-ci-cd
+        name: vuln-image
+        path: /tmp
 
     - name: Run Trivy vulnerability scanner in tarball mode
       uses: aquasecurity/trivy-action@0.20.0
       with:
-        input: /home/runner/work/python-ci-cd/python-ci-cd/vuln-image.tar
+        input: /tmp/vuln-image.tar
         severity: 'CRITICAL,HIGH'
