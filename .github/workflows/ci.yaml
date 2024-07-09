@@ -36,6 +36,9 @@ jobs:
     needs: Run-test
 
     steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v4
+      
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.3.0
       env:
