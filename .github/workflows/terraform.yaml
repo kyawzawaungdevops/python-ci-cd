@@ -30,7 +30,6 @@ jobs:
     - name: Initialize Terraform
       id: init
       run: terraform init
-      working-directory: ./terraform
     
     - name: Terraform format
       id: fmt
