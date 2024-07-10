@@ -13,22 +13,22 @@ env:
  
 jobs:
  terraform:
-   name: "Terraform Infrastructure Change Management"
-   runs-on: ubuntu-latest
-   defaults:
-     run:
-       shell: bash
-       # We keep Terraform files in the terraform directory.
-       working-directory: ./terraform
- 
-   steps:
-     - name: Checkout the repository to the runner
-       uses: actions/checkout@v2
- 
-     - name: Setup Terraform with specified version on the runner
-       uses: hashicorp/setup-terraform@v2
-       with:
-         terraform_version: 1.3.0
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 1.0.10
+
+    - name: Debug - List directory contents
+      run: ls -la /home/runner/work/python-ci-cd/python-ci-cd/
+
+    - name: Initialize Terraform
+      run: terraform init
+      working-directory: ./terraform
     
      - name: Terraform init
        id: init
